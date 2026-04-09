@@ -6,11 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { Form, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import CustomFormField from "./CustomFormField";
+import { Form } from "./ui/form";
 
 const AuthForm = ({ type }: { type: FormType }) => {
   const router = useRouter();
@@ -60,7 +61,6 @@ const AuthForm = ({ type }: { type: FormType }) => {
           Refine your interview skills. Practice AI powered job interview.
         </h3>
 
-        {/* ✅ Form component renders the <form> tag — no extra <form> needed */}
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
